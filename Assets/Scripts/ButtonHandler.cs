@@ -8,10 +8,14 @@ public class ButtonHandler : MonoBehaviour {
     public bool isStart;
     public bool isQuit;
     public Text buttonText;
+    public AudioClip effect;
+    public AudioSource effectSource;
 
     public void onHover()
     {
         buttonText.color = Color.red;
+        effectSource.clip = effect;
+        effectSource.Play();
     }
 
     public void OnMouseExit()
@@ -28,7 +32,11 @@ public class ButtonHandler : MonoBehaviour {
         }
         if (isQuit)
         {
-            Application.Quit();
+            #if UNITY_EDITOR
+                UnityEditor.EditorApplication.isPlaying = false;
+            #else
+                Application.Quit();
+            #endif
         }
     }
 

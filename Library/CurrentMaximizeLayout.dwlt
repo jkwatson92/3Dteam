@@ -23,7 +23,7 @@ MonoBehaviour:
   m_MinSize: {x: 681, y: 492}
   m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
-  controlID: 4068
+  controlID: 6634
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -126,7 +126,7 @@ MonoBehaviour:
   m_MinSize: {x: 404, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 4069
+  controlID: 6635
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -150,7 +150,7 @@ MonoBehaviour:
   m_MinSize: {x: 404, y: 221}
   m_MaxSize: {x: 8004, y: 4021}
   vertical: 0
-  controlID: 4070
+  controlID: 6636
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -203,8 +203,8 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 1475fcff
-    m_LastClickedID: -232172
+    m_SelectedIDs: 
+    m_LastClickedID: 0
     m_ExpandedIDs: 124efcff1475fcff9acdfffffaeeffffc2f0ffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -287,9 +287,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 567.07416, y: 197.19688, z: -7.4339433}
+    m_Target: {x: 639.5914, y: 348.96677, z: -8.875}
     speed: 2
-    m_Value: {x: 567.07416, y: 197.19688, z: -7.4339433}
+    m_Value: {x: 639.5914, y: 348.96677, z: -8.875}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -321,9 +321,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 755.0458
+    m_Target: 904.0044
     speed: 2
-    m_Value: 755.0458
+    m_Value: 904.0044
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -423,19 +423,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts
+    - Assets/Audio
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Scripts
+  - Assets/Audio
   m_LastFoldersGridSize: 16
   m_LastProjectPath: /Users/jourdanwatson/Zomb13_MenuScenes
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 2c3a0000
-    m_LastClickedID: 14892
+    m_SelectedIDs: 563c0000
+    m_LastClickedID: 15446
     m_ExpandedIDs: 00000000d0320000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -489,9 +489,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 1475fcff
-    m_LastClickedInstanceID: -232172
-    m_HadKeyboardFocusLastEvent: 1
+    m_SelectedInstanceIDs: faeeffff
+    m_LastClickedInstanceID: -4358
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -562,8 +562,8 @@ MonoBehaviour:
     y: 0
     width: 416
     height: 985
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 277, y: 71}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
