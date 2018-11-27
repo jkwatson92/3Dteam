@@ -3127,6 +3127,11 @@ Prefab:
       propertyPath: angleDifferenceAllowed
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 65179855393889474, guid: 0584839bceadb844fa31b1ca352056ba,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0584839bceadb844fa31b1ca352056ba, type: 2}
   m_IsPrefabAsset: 0

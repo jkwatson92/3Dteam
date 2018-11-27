@@ -61,16 +61,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\attack.cs" />
-    <Compile Include="Assets\Scripts\avoidance.cs" />
-    <Compile Include="Assets\Scripts\avoidanceobject.cs" />
+    <Compile Include="Assets\Scripts\AI\attack.cs" />
+    <Compile Include="Assets\Scripts\AI\avoidance.cs" />
+    <Compile Include="Assets\Scripts\AI\avoidanceobject.cs" />
+    <Compile Include="Assets\Scripts\AI\gotopoint.cs" />
+    <Compile Include="Assets\Scripts\AI\point.cs" />
+    <Compile Include="Assets\Scripts\AI\robby.cs" />
+    <Compile Include="Assets\Scripts\AI\vision.cs" />
+    <Compile Include="Assets\Scripts\AI\visionobject.cs" />
+    <Compile Include="Assets\Scripts\AI\wander.cs" />
     <Compile Include="Assets\Scripts\ButtonHandler.cs" />
-    <Compile Include="Assets\Scripts\charactermovement.cs" />
-    <Compile Include="Assets\Scripts\ghost.cs" />
-    <Compile Include="Assets\Scripts\input.cs" />
-    <Compile Include="Assets\Scripts\point.cs" />
-    <Compile Include="Assets\Scripts\robby.cs" />
-    <Compile Include="Assets\Scripts\wander.cs" />
+    <Compile Include="Assets\Scripts\UI\charactermovement.cs" />
+    <Compile Include="Assets\Scripts\UI\ghost.cs" />
+    <Compile Include="Assets\Scripts\UI\input.cs" />
     <None Include="Assets\Models and Textures\Terrain\klen\Shaders\VegetationPBRBase.shader" />
     <None Include="Assets\Models and Textures\Weapons\RustyBlackShovel\readme_first.txt" />
     <None Include="Assets\Models and Textures\Furniture and Props\AdventureForge\CabinetsAndShelvesReadme.txt" />
