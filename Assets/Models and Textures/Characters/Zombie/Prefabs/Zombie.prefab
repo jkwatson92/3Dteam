@@ -1350,7 +1350,7 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 2
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -1363,7 +1363,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1463030322409260}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 10, y: 0.84412384, z: 20}
@@ -1387,7 +1387,7 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1300611964618398}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 9000000, guid: fe2eb0b4e90413643a3ddc78c368140f, type: 3}
   m_Controller: {fileID: 9100000, guid: e10558744504b244599302a4ca2e3be3, type: 2}
   m_CullingMode: 0
@@ -1409,9 +1409,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 467f0bd38d481415f8b49f0e1f6273bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSeekTime: 5
+  maxSeekTime: 1
   maxSearchTime: 3
-  velocity: 10
+  velocity: 20
 --- !u!114 &114370899481034348
 MonoBehaviour:
   m_ObjectHideFlags: 1
