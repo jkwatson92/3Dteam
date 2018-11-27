@@ -61,6 +61,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\attack.cs" />
     <Compile Include="Assets\Scripts\avoidance.cs" />
     <Compile Include="Assets\Scripts\avoidanceobject.cs" />
     <Compile Include="Assets\Scripts\ButtonHandler.cs" />
