@@ -7,6 +7,7 @@ public class robby : MonoBehaviour {
     wander wander;
     attack attack;
     gotopoint gotopoint;
+    UnityEngine.AI.NavMeshAgent agent;
     public float force;
     public float walkVelocity;
     public float torque;
@@ -16,34 +17,26 @@ public class robby : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        agent = transform.GetComponent<UnityEngine.AI.NavMeshAgent>();
         enemyFound = false;
-        wander = new wander(force, walkVelocity, torque, angleDifferenceAllowed, transform.gameObject, travelRange);
-        attack = new attack(force, walkVelocity, torque, angleDifferenceAllowed, transform.gameObject, travelRange, transform.parent.Find("UserCharacter").gameObject);
-        gotopoint = new gotopoint(force, walkVelocity, torque, angleDifferenceAllowed, transform.gameObject, travelRange, transform.parent.Find("UserCharacter").gameObject.transform.position);
+        wander = new wander(force, walkVelocity, torque, angleDifferenceAllowed, transform.gameObject, travelRange,agent);
+        attack = new attack(force, walkVelocity, torque, angleDifferenceAllowed, transform.gameObject, travelRange, transform.parent.Find("UserCharacter").gameObject,agent);
+        gotopoint = new gotopoint(force, walkVelocity, torque, angleDifferenceAllowed, transform.gameObject, travelRange, transform.parent.Find("UserCharacter").gameObject.transform.position,agent);
     }
 	
 	// Update is called once per frame
 	void Update () {
-        if (!new avoidance().objectInWay(gameObject)){
-            if (new vision().userFound(gameObject))
-            {
-                attack.update();
-                enemyFound = true;
-            }
-            else
-            {
-                if (enemyFound == true)
-                {
-                    enemyFound = gotopoint.update();
-                }
-                else
-                {
-                    wander.update();
-                }
-            }
+        if (new vision().userFound(gameObject))
+        {
+            attack.set();
+            enemyFound = true;
         }
-        else{
-            new avoidance().avoid(gameObject, torque);
-        }
+        else
+        {
+            if (enemyFound == false)
+            {
+                wander.update();
+            }
+         }
     }
 }

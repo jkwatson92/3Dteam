@@ -14,9 +14,10 @@ public class attack {
     GameObject entity;
     float angleDifferenceAllowed;
     int travelRange;
+    UnityEngine.AI.NavMeshAgent agent;
 
 
-    public attack(float force, float velocity, float torque, float angleDifferenceAllowed, GameObject entity, int travelRange, GameObject target)
+    public attack(float force, float velocity, float torque, float angleDifferenceAllowed, GameObject entity, int travelRange, GameObject target, UnityEngine.AI.NavMeshAgent agent)
     {
         this.force = force;
         this.velocity = velocity;
@@ -25,6 +26,7 @@ public class attack {
         this.angleDifferenceAllowed = angleDifferenceAllowed;
         this.travelRange = travelRange;
         this.target = target;
+        this.agent = agent;
     }
 
     public float AdjustAngle(float angle)
@@ -76,11 +78,16 @@ public class attack {
 
     public void update()
     {
-        point point = new point(torque, angleDifferenceAllowed, target.transform.position, entity);
-        point.pointTowardsTarget();
-        if (entity.transform.GetComponent<Rigidbody>().velocity.magnitude < velocity)
-        {
-            entity.transform.GetComponent<Rigidbody>().AddRelativeForce(0, 0, force * Time.deltaTime);
-        }
+        //point point = new point(torque, angleDifferenceAllowed, target.transform.position, entity);
+        //point.pointTowardsTarget();
+        //if (entity.transform.GetComponent<Rigidbody>().velocity.magnitude < velocity)
+        //{
+        //    entity.transform.GetComponent<Rigidbody>().AddRelativeForce(0, 0, force * Time.deltaTime);
+        //}
+        agent.SetDestination(target.transform.position);
+    }
+
+    public void set(){
+        agent.SetDestination(target.transform.position);
     }
 }

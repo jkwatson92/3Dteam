@@ -14,9 +14,10 @@ public class gotopoint {
     GameObject entity;
     float angleDifferenceAllowed;
     int travelRange;
+    UnityEngine.AI.NavMeshAgent agent;
 
 
-    public gotopoint(float force, float velocity, float torque, float angleDifferenceAllowed, GameObject entity, int travelRange, Vector3 target)
+    public gotopoint(float force, float velocity, float torque, float angleDifferenceAllowed, GameObject entity, int travelRange, Vector3 target, UnityEngine.AI.NavMeshAgent agent)
     {
         this.force = force;
         this.velocity = velocity;
@@ -26,6 +27,7 @@ public class gotopoint {
         this.travelRange = travelRange;
         origin = entity.transform.position;
         this.target = target;
+        this.agent = agent;
         //Debug.Log("x" + target.x);
         //Debug.Log("z" + target.z);
     }
@@ -83,12 +85,17 @@ public class gotopoint {
         {
             return false;
         }
-        point point = new point(torque, angleDifferenceAllowed, target, entity);
-        point.pointTowardsTarget();
-        if (entity.transform.GetComponent<Rigidbody>().velocity.magnitude < velocity)
-        {
-            entity.transform.GetComponent<Rigidbody>().AddRelativeForce(0, 0, force * Time.deltaTime);
-        }
+        //point point = new point(torque, angleDifferenceAllowed, target, entity);
+        //point.pointTowardsTarget();
+        //if (entity.transform.GetComponent<Rigidbody>().velocity.magnitude < velocity)
+        //{
+        //    entity.transform.GetComponent<Rigidbody>().AddRelativeForce(0, 0, force * Time.deltaTime);
+        //}
+        //agent.SetDestination(target);
         return true;
+    }
+
+    public void set(){
+        agent.SetDestination(target);
     }
 }
