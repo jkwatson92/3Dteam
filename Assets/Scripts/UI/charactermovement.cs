@@ -10,10 +10,24 @@ public class charactermovement : MonoBehaviour {
     public float rotationRate;
     public float maxVelocity;
 
+    public AudioClip doorEffect;
+    public AudioSource effectSource;
+
     // Use this for initialization
     void Start()
     {
         userInput = new input();
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Door"))
+        {
+            Debug.Log("Player collided");
+            effectSource.clip = doorEffect;
+            effectSource.Play();
+            other.gameObject.SetActive(false);
+        }
     }
 
     // Update is called once per frame
