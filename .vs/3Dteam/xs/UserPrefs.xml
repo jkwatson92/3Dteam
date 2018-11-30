@@ -1,15 +1,18 @@
 ﻿<Properties StartupConfiguration="{A1519AA6-A442-89AB-94B5-E8F2ED7646A3}|">
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/AI/attack.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/UI/charactermovement.cs">
     <Files>
+      <File FileName="../../../../Artificial Intelligence/Project3/main.py" Line="1" Column="1" />
       <File FileName="Assets/Scripts/AI/vision.cs" Line="5" Column="77" />
       <File FileName="Assets/Scripts/AI/wander.cs" Line="88" Column="9" />
       <File FileName="Assets/Scripts/AI/point.cs" Line="19" Column="9" />
       <File FileName="Assets/Scripts/AI/avoidanceobject.cs" Line="19" Column="41" />
-      <File FileName="Assets/Scripts/AI/robby.cs" Line="32" Column="33" />
+      <File FileName="Assets/Scripts/AI/robby.cs" Line="32" Column="31" />
       <File FileName="Assets/Scripts/AI/visionobject.cs" Line="46" Column="64" />
       <File FileName="Assets/Scripts/AI/gotopoint.cs" Line="30" Column="11" />
-      <File FileName="Assets/Scripts/AI/attack.cs" Line="19" Column="145" />
+      <File FileName="Assets/Scripts/AI/attack.cs" Line="19" Column="1" />
+      <File FileName="Assets/Scripts/UI/charactermovement.cs" Line="47" Column="9" />
+      <File FileName="Assets/Scripts/UI/cameramovement.cs" Line="15" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
