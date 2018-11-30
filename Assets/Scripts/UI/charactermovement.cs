@@ -46,6 +46,10 @@ public class charactermovement : MonoBehaviour {
         }
         factor = rotationRate * Time.deltaTime;
         transform.Rotate(0, userInput.mousex.weight * factor, 0);
-        transform.GetChild(0).Rotate(-userInput.mousey.weight * factor, 0, 0);
+        if (Mathf.Abs(transform.GetChild(0).rotation.eulerAngles.x - (userInput.mousey.weight * factor)) <70 || Mathf.Abs(transform.GetChild(0).rotation.eulerAngles.x - (userInput.mousey.weight * factor))>290)
+        {
+            transform.GetChild(0).Rotate(-userInput.mousey.weight * factor, 0, 0);
+        }
+
     }
 }
