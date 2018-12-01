@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 //description: USES physics engine to move character
 //IMPORTANT: If not using a circular collider: will need to change rotation code
 public class charactermovement : MonoBehaviour {
@@ -9,6 +11,7 @@ public class charactermovement : MonoBehaviour {
     public input userInput;
     public float rotationRate;
     public float maxVelocity;
+    int journalCount=0;
 
     public AudioClip doorEffect;
     public AudioSource effectSource;
@@ -27,7 +30,20 @@ public class charactermovement : MonoBehaviour {
             effectSource.clip = doorEffect;
             effectSource.Play();
             other.gameObject.SetActive(false);
+        } else if (other.gameObject.CompareTag("Book"))
+        {
+            Debug.Log("Player collided");
+            effectSource.clip = doorEffect;
+            effectSource.Play();
+            other.gameObject.SetActive(false);
+            journalCount += 1;
+            //load end scene win after collection of all journals
+            if (journalCount == 1)
+            {
+                SceneManager.LoadScene(3, LoadSceneMode.Single);
+            }
         }
+
     }
 
     // Update is called once per frame
