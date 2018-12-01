@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class ButtonHandler : MonoBehaviour {
     public bool isStart;
     public bool isQuit;
+    public bool isMainMenu;
     public Text buttonText;
     public AudioClip effect;
     public AudioSource effectSource;
@@ -37,6 +38,10 @@ public class ButtonHandler : MonoBehaviour {
             #else
                 Application.Quit();
             #endif
+        }
+        if (isMainMenu)
+        {
+            SceneManager.LoadScene(0, LoadSceneMode.Single);
         }
     }
 
