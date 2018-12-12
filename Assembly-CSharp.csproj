@@ -69,6 +69,7 @@
      <Compile Include="Assets\Scripts\floatingItem.cs" />
      <Compile Include="Assets\Scripts\UI\charactermovement.cs" />
      <Compile Include="Assets\Scripts\UI\ghost.cs" />
+     <Compile Include="Assets\Scripts\UI\Health.cs" />
      <Compile Include="Assets\Scripts\UI\input.cs" />
      <None Include="Assets\Models and Textures\Terrain\klen\Shaders\VegetationPBRBase.shader" />
      <None Include="Assets\Models and Textures\Weapons\RustyBlackShovel\readme_first.txt" />
