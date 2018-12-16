@@ -11,6 +11,7 @@ public class charactermovement : MonoBehaviour {
     public input userInput;
     public float rotationRate;
     public float maxVelocity;
+    public float sprintVelocity;
     int journalCount=0;
 
     public AudioClip doorEffect;
@@ -54,6 +55,11 @@ public class charactermovement : MonoBehaviour {
         if (transform.GetComponent<Rigidbody>().velocity.magnitude < maxVelocity)
         {
             transform.GetComponent<Rigidbody>().AddRelativeForce(new Vector3(userInput.horizontal.weight * factor, 0, userInput.vertical.weight * factor));
+        }
+        else if (transform.GetComponent<Rigidbody>().velocity.magnitude < sprintVelocity){
+            if(userInput.shift.weight != 0){
+                transform.GetComponent<Rigidbody>().AddRelativeForce(new Vector3(userInput.horizontal.weight * factor, 0, userInput.vertical.weight * factor));
+            }
         }
         if (userInput.horizontal.weight == 0 && userInput.vertical.weight == 0){
             if (transform.GetComponent<Rigidbody>().velocity.magnitude >0){
