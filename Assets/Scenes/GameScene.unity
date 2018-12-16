@@ -5922,6 +5922,11 @@ Prefab:
       propertyPath: maxVelocity
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114518023590367060, guid: a26d72c5d851f472aa6b17dd5cf04625,
+        type: 2}
+      propertyPath: sprintVelocity
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a26d72c5d851f472aa6b17dd5cf04625, type: 2}
   m_IsPrefabAsset: 0
