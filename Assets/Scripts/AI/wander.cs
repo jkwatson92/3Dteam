@@ -14,25 +14,35 @@ public class wander {
     float angleDifferenceAllowed;
     int travelRange;
     UnityEngine.AI.NavMeshAgent agent;
+    float timer;
+    float starttime;
+    Transform transform;
     public void set()
     {
-        Vector3 random = UnityEngine.Random.insideUnitSphere * travelRange;
-        random += entity.transform.position;
+        //Vector3 random = UnityEngine.Random.insideUnitSphere * travelRange;
+        //random.y = 0;
+        //random += entity.transform.position;
+        var random = new System.Random();
+        int value = random.Next(0, transform.parent.childCount);
         UnityEngine.AI.NavMeshHit hit;
-        UnityEngine.AI.NavMesh.SamplePosition(random, out hit, travelRange, 1);
+        UnityEngine.AI.NavMesh.SamplePosition(transform.parent.GetChild(value).transform.position, out hit, travelRange, 1);
         Vector3 finalPosition = hit.position;
         agent.SetDestination(finalPosition);
+        target = finalPosition;
     }
 
-    public wander(float force, float velocity, float torque, float angleDifferenceAllowed, GameObject entity, int travelRange, UnityEngine.AI.NavMeshAgent agent)
+    public wander(float force, float velocity, float torque, float angleDifferenceAllowed, GameObject entity, int travelRange, UnityEngine.AI.NavMeshAgent agent, Vector3 origin, Transform transform)
     {
+        this.transform = transform;
+        this.timer = 0;
+        this.starttime = Time.deltaTime;
+        this.origin = origin;
         this.force = force;
         this.velocity = velocity;
         this.torque = torque;
         this.entity = entity;
         this.angleDifferenceAllowed = angleDifferenceAllowed;
         this.travelRange = travelRange;
-        origin = entity.transform.position;
         System.Random rand = new System.Random();
         int x = (int)origin.x;
         int z = (int)origin.z;
@@ -91,7 +101,13 @@ public class wander {
 
 
     public void update(){
+        timer += Time.deltaTime - starttime;
         if (Math.Abs(target.x-entity.transform.position.x)<1&& Math.Abs(target.z - entity.transform.position.z)<1){
+            set();
+        }
+        else if(timer>5){
+            starttime = Time.deltaTime;
+            timer = 0;
             set();
         }
         //point point = new point(torque, angleDifferenceAllowed, target, entity);
