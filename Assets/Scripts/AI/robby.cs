@@ -11,9 +11,12 @@ public class robby : MonoBehaviour {
     public int health;
     public string weaponName;
     bool dead;
+    public float rechargetime;
+    float previousattacktime;
 
 	// Use this for initialization
 	void Start () {
+        previousattacktime = 0;
         dead = false;
         agent = transform.GetComponent<UnityEngine.AI.NavMeshAgent>();
         enemyFound = false;
@@ -30,6 +33,20 @@ public class robby : MonoBehaviour {
         }
         if (new vision().userFound(gameObject))
         {
+            if (Time.time - previousattacktime > rechargetime){
+                if (Mathf.Abs(transform.parent.parent.Find("UserCharacter").position.x-transform.position.x)<1){
+                    if (Mathf.Abs(transform.parent.parent.Find("UserCharacter").position.z - transform.position.z) < 1)
+                    {
+                        previousattacktime = Time.time;
+                        GameObject thing = Instantiate(transform.Find("found").gameObject);
+                        thing.name = "attack";
+                        thing.transform.SetParent(transform.parent.parent.Find("UserCharacter"));
+                        Animator anim = GetComponent<Animator>();
+                        anim.Play("attack 0");
+
+                    }
+                }
+            }
             attack.set();
             enemyFound = true;
         }
