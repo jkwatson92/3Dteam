@@ -67,6 +67,7 @@
      <Compile Include="Assets\Scripts\ButtonHandler.cs" />
      <Compile Include="Assets\Scripts\Doors.cs" />
      <Compile Include="Assets\Scripts\floatingItem.cs" />
+     <Compile Include="Assets\Scripts\UI\characterMelee.cs" />
      <Compile Include="Assets\Scripts\UI\charactermovement.cs" />
      <Compile Include="Assets\Scripts\UI\ghost.cs" />
      <Compile Include="Assets\Scripts\UI\Health.cs" />
