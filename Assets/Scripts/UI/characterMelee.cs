@@ -9,6 +9,11 @@ public class characterMelee : MonoBehaviour {
 	Animator weaponAnim;
 	public int weaponDamage;
 	public int weaponRange;
+	public AudioSource soundSource;
+	public AudioClip swing;
+	public AudioClip hit;
+
+
 	void Start () {
 		weaponAnim = myWep.GetComponent<Animator>();
 
@@ -18,6 +23,8 @@ public class characterMelee : MonoBehaviour {
 	void Update () {
 		if(Input.GetMouseButtonDown(0))
 		{
+			soundSource.clip = swing;
+			soundSource.Play();
 			DoAttack();
 		}
 	}
