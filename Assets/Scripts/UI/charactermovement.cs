@@ -10,7 +10,7 @@ public class charactermovement : MonoBehaviour {
     public float force;
     public input userInput;
     public float rotationRate;
-    public float maxVelocity;
+    public float walkVelocity;
     public float sprintVelocity;
     int journalCount=0;
 
@@ -52,7 +52,7 @@ public class charactermovement : MonoBehaviour {
     {
         userInput.update();
         float factor = force * Time.deltaTime;
-        if (transform.GetComponent<Rigidbody>().velocity.magnitude < maxVelocity)
+        if (transform.GetComponent<Rigidbody>().velocity.magnitude < walkVelocity)
         {
             transform.GetComponent<Rigidbody>().AddRelativeForce(new Vector3(userInput.horizontal.weight * factor, 0, userInput.vertical.weight * factor));
         }
