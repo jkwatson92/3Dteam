@@ -1,12 +1,13 @@
 ﻿<Properties StartupConfiguration="{A1519AA6-A442-89AB-94B5-E8F2ED7646A3}|">
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/AI/vision.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/UI/Health.cs">
     <Files>
       <File FileName="Assets/Scripts/UI/charactermovement.cs" Line="55" Column="82" />
-      <File FileName="Assets/Scripts/AI/robby.cs" Line="40" Column="95" />
+      <File FileName="Assets/Scripts/AI/robby.cs" Line="95" Column="1" />
       <File FileName="Assets/Scripts/AI/wander.cs" Line="23" Column="27" />
       <File FileName="Assets/Scripts/AI/attack.cs" Line="10" Column="23" />
       <File FileName="Assets/Scripts/AI/vision.cs" Line="5" Column="77" />
+      <File FileName="Assets/Scripts/UI/Health.cs" Line="55" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

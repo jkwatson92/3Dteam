@@ -9,7 +9,6 @@ public class robby : MonoBehaviour {
     UnityEngine.AI.NavMeshAgent agent;
     public bool enemyFound;
     public int health;
-    public string weaponName;
     bool dead;
     public float rechargetime;
     float previousattacktime;
@@ -23,6 +22,20 @@ public class robby : MonoBehaviour {
         wander = new wander(transform.gameObject,agent);
         attack = new attack(transform.gameObject, transform.parent.parent.Find("UserCharacter").gameObject,agent);
    }
+
+    public void takeDamage(){
+        health -= 1;
+        if (health <= 0)
+        {
+            agent.isStopped = true;
+            Animator anim = GetComponent<Animator>();
+            anim.Play("fallingback 0");
+            GetComponent<Rigidbody>().velocity = Vector3.zero;
+            transform.GetComponent<Rigidbody>().isKinematic = true;
+            Destroy(transform.Find("collider").gameObject);
+            dead = true;
+        }
+    }
 
     // Update is called once per frame
     void Update()
@@ -38,9 +51,7 @@ public class robby : MonoBehaviour {
                     if (Mathf.Abs(transform.parent.parent.Find("UserCharacter").position.z - transform.position.z) < 1)
                     {
                         previousattacktime = Time.time;
-                        GameObject thing = Instantiate(transform.Find("found").gameObject);
-                        thing.name = "attack";
-                        thing.transform.SetParent(transform.parent.parent.Find("UserCharacter"));
+                        transform.parent.parent.Find("UserCharacter").GetComponent<Health>().numHearts -= 1;
                         Animator anim = GetComponent<Animator>();
                         anim.Play("attack 0");
 
@@ -66,14 +77,6 @@ public class robby : MonoBehaviour {
             transform.GetComponent<Rigidbody>().isKinematic = true;
             Destroy(transform.Find("collider").gameObject);
             dead = true;
-        }
-    }
-
-    public void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.name == weaponName)
-        {
-            health -= 1;
         }
     }
 
