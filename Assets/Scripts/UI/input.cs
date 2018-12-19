@@ -42,7 +42,6 @@ public class input
     public key jump;
     public key mousex;
     public key mousey;
-    public key shift;
 
     public  input(){
         horizontal = new key("Horizontal");
@@ -50,7 +49,6 @@ public class input
         jump = new key("Jump");
         mousex = new key("Mouse X");
         mousey = new key("Mouse Y");
-        shift = new key("Fire3");
     }
 
     public void update()
@@ -60,6 +58,5 @@ public class input
         jump.update();
         mousex.update();
         mousey.update();
-        shift.update();
     }
 }
