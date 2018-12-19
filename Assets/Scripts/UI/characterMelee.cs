@@ -8,21 +8,28 @@ public class characterMelee : MonoBehaviour {
 	public GameObject myWep;
 	Animator weaponAnim;
 	public int weaponDamage;
-	public int weaponRange;
+	public float weaponRange;
+	public float weaponCooldown;
 	public AudioSource soundSource;
 	public AudioClip swing;
-	public AudioClip hit;
+	public AudioClip landHit;
+
+	private float cooldownTimer;
 
 
 	void Start () {
+		cooldownTimer = 3;
 		weaponAnim = myWep.GetComponent<Animator>();
 
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetMouseButtonDown(0))
-		{
+		cooldownTimer += Time.deltaTime;
+		if(Input.GetMouseButtonDown(0) && cooldownTimer >= weaponCooldown)
+		{	
+			cooldownTimer = 0;
+			weaponAnim.SetTrigger("Hit");
 			soundSource.clip = swing;
 			soundSource.Play();
 			DoAttack();
@@ -31,13 +38,15 @@ public class characterMelee : MonoBehaviour {
 
 	private void DoAttack()
 	{
-		Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+		Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
 		RaycastHit hit;
 
 		if (Physics.Raycast(ray, out hit, weaponRange))
 		{
 			if(hit.collider.tag == "Enemy")
 			{
+				soundSource.clip = landHit;
+				soundSource.Play();
 				//EnemyHealth eHealth = hit.collider.GetComponent<EnemyHealth>();
 				//eHealth.TakeDamage(weaponDamage);
 			}

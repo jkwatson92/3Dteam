@@ -871,7 +871,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 232615982}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 23cb64ae3019b0445978cfdf37d1d71d, type: 3}
   m_Name: 
@@ -879,10 +879,11 @@ MonoBehaviour:
   cam: {fileID: 892218523}
   myWep: {fileID: 331863889}
   weaponDamage: 1
-  weaponRange: 2
+  weaponRange: 1
+  weaponCooldown: 1
   soundSource: {fileID: 331863890}
   swing: {fileID: 8300000, guid: 64d595fac43b73741aecd436569a802e, type: 3}
-  hit: {fileID: 8300000, guid: 0247880a56de590479f752cbfab111a6, type: 3}
+  landHit: {fileID: 8300000, guid: 0247880a56de590479f752cbfab111a6, type: 3}
 --- !u!1 &237259382
 GameObject:
   m_ObjectHideFlags: 0
@@ -6160,6 +6161,14 @@ Prefab:
     - target: {fileID: 1279744467388742, guid: 224ee078acc9cd546b58c497f2d34459, type: 2}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 1049555291697880, guid: 224ee078acc9cd546b58c497f2d34459, type: 2}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 1066017689576130, guid: 224ee078acc9cd546b58c497f2d34459, type: 2}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 224ee078acc9cd546b58c497f2d34459, type: 2}
