@@ -25,6 +25,7 @@ public class charactermovement : MonoBehaviour {
         {
             Debug.Log("Player collided");
             effectSource.clip = doorEffect;
+            effectSource.pitch = (Random.Range(0.7f, 1.1f));
             effectSource.Play();
             other.gameObject.SetActive(false);
         }
